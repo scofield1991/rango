@@ -66,24 +66,6 @@ DATABASES = {
     }
 }
 
-def make_key(key):
-    return key
-
-
-
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
-
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-
-        }
-    }
-}
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -109,11 +91,10 @@ STATICFILES_DIRS=(
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
-LOGIN_URL='/accounts/login'
+LOGIN_URL='/rango/login'
 
 REGISTRATION_OPEN = True                # If True, users can register
 ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
 LOGIN_REDIRECT_URL = '/rango/'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
-
